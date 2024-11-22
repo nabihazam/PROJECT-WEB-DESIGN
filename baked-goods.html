@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+
+<header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo-location">
+                <img src="logo.png" alt="Urban Grocer Logo" class="logo">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for products">
+                <button class="search-btn" id="searchBtn">🔍</button>
+            </div>
+
+            <!-- Login and Cart -->
+            <div class="auth-cart">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="cart.html" class="cart">
+                    <span>🛒</span> <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="category-nav">
+            <ul>
+                <li><a href="fresh-produce.html"><img src="icon1.png" alt="Fresh Produce"><br>Fresh Produce</a></li>
+                <li><a href="pet-care.html"><img src="icon2.png" alt="Pet Care"><br>Pet Care</a></li>
+                <li><a href="snacks.html"><img src="icon3.png" alt="Snacks & Confectionery"><br>Snacks</a></li>
+                <li><a href="dairy.html"><img src="icon4.png" alt="Dairy Products"><br>Dairy</a></li>
+                <li><a href="beverages.html"><img src="icon5.png" alt="Beverages"><br>Beverages</a></li>
+                <li><a href="baked-goods.html"><img src="icon6.jpg" alt="Baked Goods"><br>Baked Goods</a></li>
+                <li><a href="household.html"><img src="icon7.jpg" alt="Household"><br>Household</a></li>
+                <li><a href="frozen.html"><img src="icon8.jpg" alt="Frozen"><br>Frozen</a></li>
+                <li><a href="personal-care.html"><img src="icon9.png" alt="Personal Care"><br>Personal Care</a></li>
+                <li><a href="promotion.html"><img src="icon10.jpg" alt="Promotion"><br>Promotion</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <!-- Baked Goods -->
+    <div class="product">
+        <img src="bread.jpg" alt="Fresh Bread" class="product-image">
+        <h2>Fresh Bread</h2>
+        <p>Price: RM5.00</p>
+        <button onclick="addToCart('Fresh Bread', 5)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="croissant.jpg" alt="Croissant" class="product-image">
+        <h2>Croissant</h2>
+        <p>Price: RM6.00</p>
+        <button onclick="addToCart('Croissant', 6)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="muffin.jpg" alt="Muffin" class="product-image">
+        <h2>Muffin</h2>
+        <p>Price: RM4.50</p>
+        <button onclick="addToCart('Muffin', 4.5)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="baguette.jpg" alt="Baguette" class="product-image">
+        <h2>Baguette</h2>
+        <p>Price: RM7.00</p>
+        <button onclick="addToCart('Baguette', 7)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="cake.jpg" alt="Chocolate Cake" class="product-image">
+        <h2>Chocolate Cake</h2>
+        <p>Price: RM25.00</p>
+        <button onclick="addToCart('Chocolate Cake', 25)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="donut.jpg" alt="Donut" class="product-image">
+        <h2>Donut</h2>
+        <p>Price: RM3.00</p>
+        <button onclick="addToCart('Donut', 3)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="cookies.jpg" alt="Cookies" class="product-image">
+        <h2>Cookies</h2>
+        <p>Price: RM8.00</p>
+        <button onclick="addToCart('Cookies', 8)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="brownie.jpg" alt="Brownie" class="product-image">
+        <h2>Brownie</h2>
+        <p>Price: RM12.00</p>
+        <button onclick="addToCart('Brownie', 12)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="cupcake.jpg" alt="Cupcake" class="product-image">
+        <h2>Cupcake</h2>
+        <p>Price: RM6.00</p>
+        <button onclick="addToCart('Cupcake', 6)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="pita.jpg" alt="Pita Bread" class="product-image">
+        <h2>Pita Bread</h2>
+        <p>Price: RM4.00</p>
+        <button onclick="addToCart('Pita Bread', 4)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="pie.jpg" alt="Meat Pie" class="product-image">
+        <h2>Meat Pie</h2>
+        <p>Price: RM10.00</p>
+        <button onclick="addToCart('Meat Pie', 10)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="scone.jpg" alt="Scone" class="product-image">
+        <h2>Scone</h2>
+        <p>Price: RM5.50</p>
+        <button onclick="addToCart('Scone', 5.5)">Add to Cart</button>
+    </div>
+</main>
+
+    
+    
+     <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="footer-contact">
+                <p>Contact Us: support@urban-grocer.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add to cart function
+        function addToCart(name, price) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const newItem = { name, price };
+            cart.push(newItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>
