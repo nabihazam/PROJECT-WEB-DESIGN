@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    background-image: url('hero.jpg'); /* Add this line */
+    background-size: cover; /* Makes sure the image covers the entire screen */
+    background-position: center; /* Ensures the image is centered */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+
+        .container {
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .container input[type="text"], .container input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .container button {
+            background-color: #34A853;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 90%;
+        }
+
+        .container button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .toggle {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .toggle:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <input type="text" id="loginPhone" placeholder="Phone Number">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button id="loginBtn" onclick="login()">Login</button>
+            <p class="toggle" onclick="toggleForm('signup')">Don't have an account? Sign up here</p>
+        </div>
+
+        <!-- Sign-Up Form -->
+        <div id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupName" placeholder="Full Name">
+            <input type="text" id="signupPhone" placeholder="Phone Number">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <button id="signupBtn" onclick="signup()">Sign Up</button>
+            <p class="toggle" onclick="toggleForm('login')">Already have an account? Login here</p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between login and signup forms
+        function toggleForm(form) {
+            if (form === 'signup') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('signupForm').style.display = 'block';
+            } else {
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('signupForm').style.display = 'none';
+            }
+        }
+
+        // Sign-Up Functionality
+        function signup() {
+            const name = document.getElementById('signupName').value.trim();
+            const phone = document.getElementById('signupPhone').value.trim();
+            const password = document.getElementById('signupPassword').value.trim();
+
+            if (!name || !phone || !password) {
+                alert('Please fill in all fields to sign up.');
+                return;
+            }
+
+            // Simulate saving to a database
+            localStorage.setItem('userPhone', phone);
+            localStorage.setItem('userPassword', password);
+
+            alert('Sign-up successful! You can now log in.');
+            toggleForm('login');
+        }
+
+        // Login Functionality
+        function login() {
+            const phone = document.getElementById('loginPhone').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+
+            // Retrieve saved user data
+            const savedPhone = localStorage.getItem('userPhone');
+            const savedPassword = localStorage.getItem('userPassword');
+
+            if (phone === savedPhone && password === savedPassword) {
+                alert('Login successful!');
+             // Redirect to index.html
+                window.location.href = 'index.html';
+            } else {
+                alert('Incorrect phone number or password. Please try again or sign up.');
+            }
+        }
+    </script>
+</body>
+</html>
